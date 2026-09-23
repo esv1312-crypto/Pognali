@@ -21,6 +21,14 @@ jobs:
           channel: stable
           cache: true
 
+      - name: Generate Android project
+        run: |
+          flutter create \
+            --platforms=android \
+            --org ru.pognali \
+            --project-name pognali_mvp \
+            mobile
+
       - name: Get dependencies
         working-directory: mobile
         run: flutter pub get
