@@ -1,0 +1,13 @@
+workflows:
+  android-debug:
+    name: Pognali Android Debug
+    instance_type: linux_x2
+    environment:
+      flutter: stable
+    scripts:
+      - name: Get packages
+        script: cd mobile && flutter pub get
+      - name: Build APK
+        script: cd mobile && flutter build apk --debug
+    artifacts:
+      - mobile/build/app/outputs/flutter-apk/app-debug.apk

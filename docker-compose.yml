@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: pognali
+      POSTGRES_USER: pognali
+      POSTGRES_PASSWORD: pognali
+    ports:
+      - "5432:5432"
+    volumes:
+      - pognali_pg:/var/lib/postgresql/data
+volumes:
+  pognali_pg:
